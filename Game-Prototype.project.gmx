@@ -9,15 +9,23 @@
   <sprites name="sprites">
     <sprites name="player">
       <sprite>sprites\spr_playerWalk</sprite>
-      <sprite>sprites\spr_playerStill</sprite>
+      <sprite>sprites\spr_playerStillRight</sprite>
+      <sprite>sprites\spr_playerStillUp</sprite>
+      <sprite>sprites\spr_playerWalkDown</sprite>
+      <sprite>sprites\spr_playerWalkLeft</sprite>
+      <sprite>sprites\spr_playerWalkRight</sprite>
+      <sprite>sprites\spr_playerWalkUp</sprite>
+      <sprite>sprites\spr_playerStillDown</sprite>
+      <sprite>sprites\spr_playerStillLeft</sprite>
     </sprites>
     <sprites name="environment">
       <sprite>sprites\spr_wallTest</sprite>
-      <sprite>sprites\sprite2</sprite>
+      <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_platform</sprite>
       <sprites name="key">
         <sprite>sprites\key_gold1</sprite>
       </sprites>
+      <sprite>sprites\spr_wallInvis</sprite>
     </sprites>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_dead</sprite>
