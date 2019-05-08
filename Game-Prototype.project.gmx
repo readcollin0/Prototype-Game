@@ -72,9 +72,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
-    <room>rooms\room2</room>
-    <room>rooms\Blank_Room</room>
-    <room>rooms\Shadow_Room</room>
+    <room>rooms\Room_prototype</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
