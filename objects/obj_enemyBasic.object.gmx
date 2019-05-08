@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>actionNumber = 0;
+            <string>event_inherited();
+
+actionNumber = 0;
 
 actions = array(array(2, 1));
 </string>
