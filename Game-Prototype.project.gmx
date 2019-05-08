@@ -2,7 +2,7 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
-    <Config>Configs\start_room2</Config>
+    <Config>Configs\Debug</Config>
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
@@ -25,7 +25,15 @@
       <sprites name="key">
         <sprite>sprites\key_gold1</sprite>
       </sprites>
-      <sprite>sprites\spr_wallInvis</sprite>
+      <sprites name="wallInvis">
+        <sprite>sprites\spr_wallInvis</sprite>
+        <sprite>sprites\spr_wallInvisCorner</sprite>
+        <sprite>sprites\spr_wallInvisCorner2</sprite>
+        <sprite>sprites\spr_wallInvisHalf</sprite>
+        <sprite>sprites\spr_wallInvisCorner2Inv</sprite>
+        <sprite>sprites\spr_wallInvisCornerSmall</sprite>
+        <sprite>sprites\spr_wallInvisCornerInv</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_dead</sprite>
@@ -62,6 +70,15 @@
       <objects name="keys">
         <object>objects\obj_key</object>
         <object>objects\par_key</object>
+      </objects>
+      <objects name="wallInvis">
+        <object>objects\obj_wallInvis</object>
+        <object>objects\obj_wallInvisCorner</object>
+        <object>objects\obj_wallInvisCorner2</object>
+        <object>objects\obj_wallInvisHalf</object>
+        <object>objects\obj_wallInvisCorner2Inv</object>
+        <object>objects\obj_wallInvisCornerSmall</object>
+        <object>objects\obj_wallInvisCornerInv</object>
       </objects>
     </objects>
     <objects name="enemy">
