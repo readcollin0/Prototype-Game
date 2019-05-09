@@ -17,6 +17,7 @@
       <sprite>sprites\spr_playerWalkUp</sprite>
       <sprite>sprites\spr_playerStillDown</sprite>
       <sprite>sprites\spr_playerStillLeft</sprite>
+      <sprite>sprites\spr_swordBasic</sprite>
     </sprites>
     <sprites name="environment">
       <sprite>sprites\spr_wallTest</sprite>
@@ -58,7 +59,9 @@
     <scripts name="array_helper">
       <script>scripts\array_add.gml</script>
       <script>scripts\array.gml</script>
+      <script>scripts\array_find.gml</script>
     </scripts>
+    <script>scripts\scr_instance_place_multi.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -86,10 +89,11 @@
       <object>objects\obj_enemyBasic</object>
     </objects>
     <object>objects\obj_dead</object>
+    <object>objects\obj_swordBasic</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Room_prototype</room>
     <room>rooms\room1</room>
+    <room>rooms\Room_prototype</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

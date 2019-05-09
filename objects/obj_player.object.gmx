@@ -41,6 +41,50 @@ image_speed = 1 / 15; // Animation speed, FPS
 dir = 2; // This is the default direction, right.
 health = MAX_HEALTH;
 invincibility = 0;
+attacking = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (invincibility &gt; 0) {
+    invincibility -= 1;
+    if (invincibility % (INV_GONE_FRAMES + INV_HERE_FRAMES) &gt;= INV_HERE_FRAMES) {
+        image_alpha = 0;
+    } else {
+        image_alpha = 1;
+    }
+} else {
+    var enemyCollide = instance_place(x, y, par_enemy);
+    if (enemyCollide != noone) {
+        var enemyDamage = enemyCollide.damage;
+        
+        health -= enemyDamage;
+        if (health &lt;= 0) {
+            var dead = instance_create(0, 0, obj_dead);
+            global.DEAD = true;
+        } else {
+            invincibility = INVINCIBILITY_FRAMES;
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -140,32 +184,27 @@ if (!grounded) {
 }
 */
 
-if (invincibility &gt; 0) {
-    invincibility -= 1;
-    if (invincibility % (INV_GONE_FRAMES + INV_HERE_FRAMES) &gt;= INV_HERE_FRAMES) {
-        image_alpha = 0;
-    } else {
-        image_alpha = 1;
-    }
-} else {
-    var enemyCollide = instance_place(x, y, par_enemy);
-    if (enemyCollide != noone) {
-        var enemyDamage = enemyCollide.damage;
-        
-        health -= enemyDamage;
-        if (health &lt;= 0) {
-            var dead = instance_create(0, 0, obj_dead);
-            global.DEAD = true;
-        } else {
-            invincibility = INVINCIBILITY_FRAMES;
-        }
-    }
-}
-
 var key = instance_place(x, y, par_key);
 if (key != noone) {
     ds_map_add(global.keys, key.keyId, true);
     instance_destroy(key);
+}
+
+if (keyboard_check_direct(vk_space) &amp;&amp; !attacking) {
+    attacking = true;
+    var weapon = instance_create(x, y, obj_swordBasic);
+    weapon.parent = self;
+    weapon.offset = pi * (dir/2 - 1);
+    
+    with weapon {
+        var parX = parent.x;
+        var parY = parent.y - 40;
+        
+        x = parX + SWING_RADIUS * cos(angle + offset);
+        y = parY + SWING_RADIUS * sin(angle + offset);
+        
+        image_angle = point_direction(parX, parY, x, y) + IMAGE_ANGLE_OFFSET;
+    }
 }
 
 /*animationTimer -= 1;
@@ -179,6 +218,8 @@ if (animationTimer == 0) {
 }*/
 
 depth = 1000 * y + 200
+
+
 </string>
           </argument>
         </arguments>

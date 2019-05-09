@@ -1,8 +1,10 @@
-///array_add(arr, *args)
+///array_add(arr, args)
 
-var arr = argument0;
+var arr = argument[0];
 var baseIndex = array_length_1d(arr);
 
-for (var i=0; i<argument_count-1; i++) {
-    arr[baseIndex + i] = argument[1 + i];
+for (var i=1; i<argument_count; i++) {
+    arr[baseIndex + i - 1] = argument[i];
 }
+
+return arr;

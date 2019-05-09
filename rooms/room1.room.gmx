@@ -836,6 +836,12 @@
     <instance objName="obj_wallInvisCorner2Inv" x="704" y="160" name="inst_7F89ECC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallInvis" x="704" y="256" name="inst_FD2AC85A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallInvisCorner2" x="800" y="224" name="inst_2716179F" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="obj_enemyBasic" x="864" y="192" name="inst_9382319F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemyBasic" x="864" y="224" name="inst_09138A49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemyBasic" x="864" y="256" name="inst_5D895559" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemyBasic" x="864" y="352" name="inst_7B8597C2" locked="0" code="event_inherited();&#xA;&#xA;hp = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemyBasic" x="864" y="384" name="inst_DD6BC483" locked="0" code="event_inherited();&#xA;&#xA;hp = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemyBasic" x="864" y="416" name="inst_86CC0196" locked="0" code="event_inherited();&#xA;&#xA;hp = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
