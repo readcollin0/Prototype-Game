@@ -38,6 +38,9 @@
     </sprites>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_dead</sprite>
+    <sprites name="hearts">
+      <sprite>sprites\spr_heart</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_remscape</background>
@@ -62,6 +65,7 @@
       <script>scripts\array_find.gml</script>
     </scripts>
     <script>scripts\scr_instance_place_multi.gml</script>
+    <script>scripts\draw_health.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>

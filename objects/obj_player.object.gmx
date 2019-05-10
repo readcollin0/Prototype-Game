@@ -28,6 +28,7 @@
             <string>// Globals //
 global.keys = ds_map_create();
 global.DEAD = false;
+texture_set_interpolation(false);
 
 // Player constants //
 INVINCIBILITY_FRAMES = 2 * room_speed;
@@ -64,7 +65,15 @@ attacking = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (invincibility &gt; 0) {
+            <string>if (global.DEAD) {
+    speed = 0;
+    image_speed = 0;
+    exit;
+}
+
+
+
+if (invincibility &gt; 0) {
     invincibility -= 1;
     if (invincibility % (INV_GONE_FRAMES + INV_HERE_FRAMES) &gt;= INV_HERE_FRAMES) {
         image_alpha = 0;
@@ -220,6 +229,29 @@ if (animationTimer == 0) {
 depth = 1000 * y + 200
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_health();
 </string>
           </argument>
         </arguments>
