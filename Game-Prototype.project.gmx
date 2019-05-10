@@ -36,10 +36,14 @@
         <sprite>sprites\spr_wallInvisCornerInv</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_dead</sprite>
-    <sprites name="hearts">
+    <sprites name="enemy">
+      <sprite>sprites\spr_enemy</sprite>
+      <sprite>sprites\spr_enemyOni</sprite>
+    </sprites>
+    <sprites name="gui">
       <sprite>sprites\spr_heart</sprite>
+      <sprite>sprites\spr_startButton</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -69,36 +73,42 @@
     <script>scripts\draw_health.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_player</object>
-    <objects name="environment">
-      <object>objects\obj_platform</object>
-      <object>objects\obj_wallTest</object>
-      <object>objects\obj_door</object>
-      <object>objects\par_wall</object>
-      <objects name="keys">
-        <object>objects\obj_key</object>
-        <object>objects\par_key</object>
+    <objects name="gui">
+      <object>objects\obj_dead</object>
+      <object>objects\obj_startButton</object>
+    </objects>
+    <objects name="game">
+      <object>objects\obj_player</object>
+      <object>objects\obj_swordBasic</object>
+      <objects name="enemy">
+        <object>objects\par_enemy</object>
+        <object>objects\obj_enemyBasic</object>
       </objects>
-      <objects name="wallInvis">
-        <object>objects\obj_wallInvis</object>
-        <object>objects\obj_wallInvisCorner</object>
-        <object>objects\obj_wallInvisCorner2</object>
-        <object>objects\obj_wallInvisHalf</object>
-        <object>objects\obj_wallInvisCorner2Inv</object>
-        <object>objects\obj_wallInvisCornerSmall</object>
-        <object>objects\obj_wallInvisCornerInv</object>
+      <objects name="environment">
+        <object>objects\obj_platform</object>
+        <object>objects\obj_wallTest</object>
+        <object>objects\obj_door</object>
+        <object>objects\par_wall</object>
+        <objects name="keys">
+          <object>objects\obj_key</object>
+          <object>objects\par_key</object>
+        </objects>
+        <objects name="wallInvis">
+          <object>objects\obj_wallInvis</object>
+          <object>objects\obj_wallInvisCorner</object>
+          <object>objects\obj_wallInvisCorner2</object>
+          <object>objects\obj_wallInvisHalf</object>
+          <object>objects\obj_wallInvisCorner2Inv</object>
+          <object>objects\obj_wallInvisCornerSmall</object>
+          <object>objects\obj_wallInvisCornerInv</object>
+        </objects>
       </objects>
     </objects>
-    <objects name="enemy">
-      <object>objects\par_enemy</object>
-      <object>objects\obj_enemyBasic</object>
-    </objects>
-    <object>objects\obj_dead</object>
-    <object>objects\obj_swordBasic</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_title</room>
+    <room>rooms\rm_level1</room>
     <room>rooms\room1</room>
-    <room>rooms\Room_prototype</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
