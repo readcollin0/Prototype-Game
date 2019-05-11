@@ -25,16 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 150 / room_speed;
+            <string>startSpeed = 250 / room_speed;
+speed = 250 / room_speed;
 
-FADE = false;
-FADE_SPEED = 1 / (1 * room_speed); // Fade after 1 second
+// Time to live: 1 / (seconds * room_speed)
+FADE_SPEED = 0;
 
-SHRINK = false;
-SHRINK_SPEED = 1 / (1 * room_speed); // Shrink after 1 second
+// Time to live: scale / (seconds * room_speed)
+SHRINK_SPEED = 0; // Shrink after 1 second
 
-SLOW = false;
-SLOW_SPEED = 150 / power(room_speed, 2);
+// Time to live: startSpeed / (seconds * room_speed)
+SLOW_SPEED = 0;
+
+// Time to zero: damage / (seconds * room_speed)
+DAMAGE_DROP = 0;
+
+immuneInst = noone;
 
 damage = 1;
 </string>
@@ -64,27 +70,33 @@ damage = 1;
     exit;
 }
 
+// Collisions
 var hit = instance_place(x, y, par_destructible);
-if (hit != noone) {
+if (hit != noone &amp;&amp; hit != immuneInst) {
     hit.hp -= damage;
     instance_destroy();
 }
 
-if (FADE) {
+if (instance_place(x, y, par_wall) != noone) {
+    instance_destroy();
+}
+
+// Movement changes
+if (FADE_SPEED &gt; 0) {
     image_alpha -= FADE_SPEED;
     if (image_alpha &lt;= 0) {
         instance_destroy();
     }
 }
 
-if (SLOW) {
+if (SLOW_SPEED &gt; 0) {
     speed -= SLOW_SPEED;
     if (speed &lt;= 0) {
         instance_destroy();
     }
 }
 
-if (SHRINK) {
+if (SHRINK_SPEED &gt; 0) {
     image_xscale -= SHRINK_SPEED;
     image_yscale -= SHRINK_SPEED;
     if (image_xscale &lt;= 0) {
@@ -92,8 +104,8 @@ if (SHRINK) {
     }
 }
 
-if (instance_place(x, y, par_wall) != noone) {
-    instance_destroy();
+if (DAMAGE_DROP &gt; 0) {
+    damage -= DAMAGE_DROP
 }
 
 depth = -(100 * y + 25);

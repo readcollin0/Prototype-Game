@@ -27,17 +27,19 @@
             <kind>1</kind>
             <string>event_inherited();
 
-EXPLOSIVE_POWER = 45; // Number of shards generated
+EXPLOSIVE_POWER = 90; // Number of shards generated
 
-SHARD_DAMAGE = .25;
-SHARD_SPEED = 500 / room_speed;
+SHARD_DAMAGE = .5;
+SHARD_SPEED_MAX = 600 / room_speed;
+SHARD_SPEED_MIN = 300 / room_speed;
 SHARD_SCALE = .5;
 
-SHARD_SHRINK_SPEED = 1 / (3 * room_speed);
+SHARD_SHRINK_SPEED = SHARD_SCALE / (1.5 * room_speed);
 SHARD_SLOW_SPEED = 350 / power(room_speed, 2);
-SHARD_FADE_SPEED = noone;
+SHARD_FADE_SPEED = 0;
+SHARD_DAMAGE_DROP = .25 / (1.5 * room_speed);
 
-hp = .25;
+hp = .5;
 </string>
           </argument>
         </arguments>

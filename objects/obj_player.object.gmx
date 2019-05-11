@@ -41,7 +41,6 @@ image_speed = 1 / 15; // Animation speed, FPS
 // Default settings //
 dir = 2; // This is the default direction, right.
 hp = MAX_HEALTH;
-hp_last = hp;
 invincibility = 0;
 attacking = false;
 </string>
@@ -79,7 +78,6 @@ if (invincibility &gt; 0) {
     } else {
         image_alpha = 1;
     }
-    hp = hp_last;
 } else {
     var enemyCollide = instance_place(x, y, par_enemy);
     if (enemyCollide != noone) {
@@ -216,10 +214,6 @@ if (keyboard_check_direct(vk_space) &amp;&amp; !attacking) {
         
         image_angle = point_direction(parX, parY, x, y) + IMAGE_ANGLE_OFFSET;
     }
-}
-
-if (hp &lt; 0) {
-    hp = 0;
 }
 
 /*animationTimer -= 1;

@@ -98,6 +98,7 @@
         <object>objects\obj_wallTest</object>
         <object>objects\obj_door</object>
         <object>objects\par_wall</object>
+        <object>objects\obj_barrel</object>
         <objects name="keys">
           <object>objects\obj_key</object>
           <object>objects\par_key</object>
@@ -111,7 +112,6 @@
           <object>objects\obj_wallInvisCornerSmall</object>
           <object>objects\obj_wallInvisCornerInv</object>
         </objects>
-        <object>objects\obj_barrel</object>
       </objects>
     </objects>
   </objects>
