@@ -5,7 +5,9 @@
     <Config>Configs\Debug</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sfx_explosion</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="player">
       <sprite>sprites\spr_playerWalk</sprite>
@@ -20,12 +22,6 @@
       <sprite>sprites\spr_swordBasic</sprite>
     </sprites>
     <sprites name="environment">
-      <sprite>sprites\spr_wallTest</sprite>
-      <sprite>sprites\spr_door</sprite>
-      <sprite>sprites\spr_platform</sprite>
-      <sprites name="key">
-        <sprite>sprites\key_gold1</sprite>
-      </sprites>
       <sprites name="wallInvis">
         <sprite>sprites\spr_wallInvis</sprite>
         <sprite>sprites\spr_wallInvisCorner</sprite>
@@ -35,15 +31,25 @@
         <sprite>sprites\spr_wallInvisCornerSmall</sprite>
         <sprite>sprites\spr_wallInvisCornerInv</sprite>
       </sprites>
+      <sprites name="key">
+        <sprite>sprites\key_gold1</sprite>
+      </sprites>
+      <sprite>sprites\spr_wallTest</sprite>
+      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_platform</sprite>
+      <sprite>sprites\spr_explosive</sprite>
     </sprites>
-    <sprite>sprites\spr_dead</sprite>
     <sprites name="enemy">
       <sprite>sprites\spr_enemy</sprite>
       <sprite>sprites\spr_enemyOni</sprite>
     </sprites>
     <sprites name="gui">
       <sprite>sprites\spr_heart</sprite>
+      <sprite>sprites\spr_dead</sprite>
       <sprite>sprites\spr_startButton</sprite>
+    </sprites>
+    <sprites name="particle">
+      <sprite>sprites\spr_fireball</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -80,6 +86,7 @@
     <objects name="game">
       <object>objects\obj_player</object>
       <object>objects\obj_swordBasic</object>
+      <object>objects\par_destructible</object>
       <objects name="enemy">
         <object>objects\par_enemy</object>
         <object>objects\obj_enemyBasic</object>
@@ -102,13 +109,15 @@
           <object>objects\obj_wallInvisCornerSmall</object>
           <object>objects\obj_wallInvisCornerInv</object>
         </objects>
+        <object>objects\obj_barrel</object>
       </objects>
+      <object>objects\obj_fireball</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room1</room>
     <room>rooms\rm_title</room>
     <room>rooms\rm_level1</room>
-    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
