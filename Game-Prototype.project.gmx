@@ -77,6 +77,7 @@
     </scripts>
     <script>scripts\scr_instance_place_multi.gml</script>
     <script>scripts\draw_health.gml</script>
+    <script>scripts\setup_fireball.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="gui">
@@ -87,6 +88,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_swordBasic</object>
       <object>objects\par_destructible</object>
+      <object>objects\obj_fireball</object>
       <objects name="enemy">
         <object>objects\par_enemy</object>
         <object>objects\obj_enemyBasic</object>
@@ -111,7 +113,6 @@
         </objects>
         <object>objects\obj_barrel</object>
       </objects>
-      <object>objects\obj_fireball</object>
     </objects>
   </objects>
   <rooms name="rooms">

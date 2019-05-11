@@ -30,6 +30,9 @@
 FADE = false;
 FADE_SPEED = 1 / (1 * room_speed); // Fade after 1 second
 
+SHRINK = false;
+SHRINK_SPEED = 1 / (1 * room_speed); // Shrink after 1 second
+
 SLOW = false;
 SLOW_SPEED = 150 / power(room_speed, 2);
 
@@ -77,6 +80,14 @@ if (FADE) {
 if (SLOW) {
     speed -= SLOW_SPEED;
     if (speed &lt;= 0) {
+        instance_destroy();
+    }
+}
+
+if (SHRINK) {
+    image_xscale -= SHRINK_SPEED;
+    image_yscale -= SHRINK_SPEED;
+    if (image_xscale &lt;= 0) {
         instance_destroy();
     }
 }
