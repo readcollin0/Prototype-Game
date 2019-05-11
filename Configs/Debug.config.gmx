@@ -678,8 +678,7 @@
     <option_xbone_title_id>1234ABCD</option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="2">
-      <constant name="showInvisibleWalls">true</constant>
+    <constants number="1">
       <constant name="debug">true</constant>
     </constants>
   </ConfigConstants>

@@ -120,6 +120,9 @@
     <room>rooms\rm_title</room>
     <room>rooms\rm_level1</room>
   </rooms>
+  <constants number="1">
+    <constant name="debug">false</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
