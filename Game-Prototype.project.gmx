@@ -69,6 +69,9 @@
     <scripts name="enemy_actions">
       <script>scripts\enemy_move.gml</script>
       <script>scripts\enemy_wait.gml</script>
+      <script>scripts\can_see_inst.gml</script>
+      <script>scripts\enemy_look.gml</script>
+      <script>scripts\enemy_perform_action.gml</script>
     </scripts>
     <scripts name="array_helper">
       <script>scripts\array_add.gml</script>
@@ -76,8 +79,12 @@
       <script>scripts\array_find.gml</script>
     </scripts>
     <script>scripts\scr_instance_place_multi.gml</script>
-    <script>scripts\draw_health.gml</script>
     <script>scripts\setup_fireball.gml</script>
+    <script>scripts\dir_to_deg.gml</script>
+    <scripts name="draw">
+      <script>scripts\draw_health.gml</script>
+      <script>scripts\draw_arc.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="gui">
@@ -92,6 +99,7 @@
       <objects name="enemy">
         <object>objects\par_enemy</object>
         <object>objects\obj_enemyBasic</object>
+        <object>objects\obj_enemyMelee</object>
       </objects>
       <objects name="environment">
         <object>objects\obj_platform</object>
@@ -120,8 +128,9 @@
     <room>rooms\rm_title</room>
     <room>rooms\rm_level1</room>
   </rooms>
-  <constants number="1">
+  <constants number="2">
     <constant name="debug">false</constant>
+    <constant name="cfg_useSound">false</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

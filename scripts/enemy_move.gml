@@ -7,7 +7,7 @@ var maxDist = argument2;
 var distToPoint = point_distance(x, y, destX, destY);
 
 if (distToPoint > maxDist) {
-    move_towards_point(destX, destY, maxDist);
+    mp_potential_step_object(destX, destY, maxDist, par_wall);//move_towards_point(destX, destY, maxDist);
     return false;
 } else {
     // show_message("X: " + string(x) + "#Y: " + string(y) + "##Dest. X: " + string(destX) + "#Dest. Y: " + string(destY) + "##Distance: " + string(distToPoint));

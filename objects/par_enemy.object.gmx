@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>event_inherited();
 
-damage = 1;
 complete = true;
 </string>
           </argument>
