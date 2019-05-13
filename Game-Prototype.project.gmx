@@ -130,7 +130,7 @@
   </rooms>
   <constants number="2">
     <constant name="debug">false</constant>
-    <constant name="cfg_useSound">false</constant>
+    <constant name="cfg_useSound">true</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
