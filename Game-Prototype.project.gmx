@@ -2,7 +2,8 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
-    <Config>Configs\Debug</Config>
+    <Config>Configs\DebugTestLevel</Config>
+    <Config>Configs\DebugMainGame</Config>
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
@@ -85,6 +86,12 @@
       <script>scripts\draw_health.gml</script>
       <script>scripts\draw_arc.gml</script>
     </scripts>
+    <scripts name="parse_args">
+      <script>scripts\parse_program_args.gml</script>
+      <script>scripts\create_param_ds_map.gml</script>
+      <script>scripts\parse_program_arg.gml</script>
+      <script>scripts\get_setting.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="gui">
@@ -122,14 +129,17 @@
         </objects>
       </objects>
     </objects>
+    <object>objects\obj_game_controller</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room1</room>
     <room>rooms\rm_title</room>
+    <room>rooms\room1</room>
     <room>rooms\rm_level1</room>
   </rooms>
-  <constants number="2">
-    <constant name="debug">false</constant>
+  <constants number="4">
+    <constant name="def_debug">false</constant>
+    <constant name="def_useTestLevel">false</constant>
+    <constant name="cfg_startingRoom">rm_level1</constant>
     <constant name="cfg_useSound">true</constant>
   </constants>
   <help>

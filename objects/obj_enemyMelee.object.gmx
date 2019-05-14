@@ -40,7 +40,7 @@ actions = array(array(2, 1));
 
 // Initialization
 actionNumber = 0;
-playerLock = false;
+state = "actions";
 resumeTimer = 0;
 complete = true;
 </string>
@@ -75,18 +75,11 @@ var curAction = actions[actionNumber];
 var player = instance_nearest(x, y, obj_player);
 
 var canSeePlayer = can_see_inst(player, direction, MAX_RANGE, ENEMY_FOV);
-if (!playerLock &amp;&amp; canSeePlayer) {
-    playerLock = true;
+if (state != "attack" &amp;&amp; canSeePlayer) {
+    state = "attack";
 }
-/*if (!playerLock &amp;&amp; playerDist &lt;= MAX_RANGE) {
-    var angle = dir_to_deg(dir);
-    if (abs(angle_difference(angle, playerDir)) &lt; ENEMY_FOV / 2) {
-        playerLock = true;
-        speed = 0;
-    }
-}*/
 
-if (playerLock) {
+if (state == "attack") {
     canSeePlayer = can_see_inst(player, direction, CHASING_RANGE, 360);
     if (canSeePlayer) {
         mp_potential_step_object(player.x, player.y, CHASING_SPEED, par_wall);
@@ -96,7 +89,7 @@ if (playerLock) {
         if (resumeTimer &gt; 0) {
             resumeTimer--;
         } else {
-            playerLock = false;
+            state = "actions";
         }
     }
 } else {
@@ -138,10 +131,13 @@ if (playerLock) {
             <kind>1</kind>
             <string>event_inherited();
 
-if (debug) {
+if (get_setting("debugMode")) {
     var viewX = view_xview[0];
     var viewY = view_yview[0];
-    if (playerLock) {
+    
+    draw_text(x - viewX, y - viewY + 10, "state: " + state);
+    
+    if (state == "attack") {
         draw_circle(x - viewX, y - viewY, CHASING_RANGE, true);
     } else {
         var startX = x + MAX_RANGE * cos(degtorad(direction - ENEMY_FOV / 2)) - viewX;

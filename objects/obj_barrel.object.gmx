@@ -68,7 +68,7 @@ hp = .5;
 }
 
 if (hp &lt;= 0) {
-    if (cfg_useSound) audio_play_sound(sfx_explosion, 10, false);
+    audio_play_sound(sfx_explosion, 10, false);
     for (var i = 0; i &lt; EXPLOSIVE_POWER; i++) {
         var fb = instance_create(x, y, obj_fireball);
         setup_fireball(fb);

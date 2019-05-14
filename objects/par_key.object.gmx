@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (debug) {
+            <string>if (get_setting("debugMode")) {
     draw_text(x - view_xview[0], y - view_yview[0], "keyId: " + string(keyId));
 }
 </string>
