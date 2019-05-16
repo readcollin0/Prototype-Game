@@ -52,11 +52,13 @@
     <sprites name="particle">
       <sprite>sprites\spr_fireball</sprite>
     </sprites>
+    <sprite>sprites\spr_potionHP</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_remscape</background>
     <background>background\spr_tileTest</background>
     <background>background\bg_tileset</background>
+    <background>background\bg_tilesetV2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -127,6 +129,9 @@
           <object>objects\obj_wallInvisCornerSmall</object>
           <object>objects\obj_wallInvisCornerInv</object>
         </objects>
+      </objects>
+      <objects name="pickups">
+        <object>objects\obj_potionHP</object>
       </objects>
     </objects>
     <object>objects\obj_game_controller</object>
