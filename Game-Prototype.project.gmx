@@ -31,6 +31,7 @@
         <sprite>sprites\spr_wallInvisCorner2Inv</sprite>
         <sprite>sprites\spr_wallInvisCornerSmall</sprite>
         <sprite>sprites\spr_wallInvisCornerInv</sprite>
+        <sprite>sprites\spr_floorBarrier</sprite>
       </sprites>
       <sprites name="key">
         <sprite>sprites\key_gold1</sprite>
@@ -68,7 +69,6 @@
       <script>scripts\move_left_collide.gml</script>
       <script>scripts\move_right_collide.gml</script>
     </scripts>
-    <script>scripts\set_sprite_tool.gml</script>
     <scripts name="enemy_actions">
       <script>scripts\enemy_move.gml</script>
       <script>scripts\enemy_wait.gml</script>
@@ -81,9 +81,6 @@
       <script>scripts\array.gml</script>
       <script>scripts\array_find.gml</script>
     </scripts>
-    <script>scripts\scr_instance_place_multi.gml</script>
-    <script>scripts\setup_fireball.gml</script>
-    <script>scripts\dir_to_deg.gml</script>
     <scripts name="draw">
       <script>scripts\draw_health.gml</script>
       <script>scripts\draw_arc.gml</script>
@@ -94,6 +91,10 @@
       <script>scripts\parse_program_arg.gml</script>
       <script>scripts\get_setting.gml</script>
     </scripts>
+    <script>scripts\set_sprite_tool.gml</script>
+    <script>scripts\scr_instance_place_multi.gml</script>
+    <script>scripts\setup_fireball.gml</script>
+    <script>scripts\dir_to_deg.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="gui">
@@ -111,10 +112,11 @@
         <object>objects\obj_enemyMelee</object>
       </objects>
       <objects name="environment">
-        <object>objects\obj_platform</object>
         <object>objects\obj_wallTest</object>
         <object>objects\obj_door</object>
         <object>objects\par_wall</object>
+        <object>objects\par_wallBlock</object>
+        <object>objects\par_floorBlock</object>
         <object>objects\obj_barrel</object>
         <objects name="keys">
           <object>objects\obj_key</object>
@@ -128,6 +130,7 @@
           <object>objects\obj_wallInvisCorner2Inv</object>
           <object>objects\obj_wallInvisCornerSmall</object>
           <object>objects\obj_wallInvisCornerInv</object>
+          <object>objects\obj_floorBarrier</object>
         </objects>
       </objects>
       <objects name="pickups">

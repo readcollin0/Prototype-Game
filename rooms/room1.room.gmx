@@ -868,6 +868,22 @@
     <instance objName="obj_potionHP" x="96" y="352" name="inst_FF1C5508" locked="0" code="HP_RESTORED = .25;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_potionHP" x="96" y="224" name="inst_37600CD2" locked="0" code="HP_RESTORED = .25;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_potionHP" x="96" y="96" name="inst_0A906444" locked="0" code="HP_RESTORED = .25;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="864" y="96" name="inst_FA84AACE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="832" y="96" name="inst_3BFBCE48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="96" name="inst_7C4E3E0E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="128" name="inst_5DC49623" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="160" name="inst_E0E3FE02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="192" name="inst_72DAE740" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="224" name="inst_517B2DE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="256" name="inst_864EED51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="288" name="inst_BC5B2933" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="320" name="inst_885C59D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="352" name="inst_692BC0F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="384" name="inst_F2261051" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="416" name="inst_BB6998BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="800" y="448" name="inst_1E1E1EF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="832" y="448" name="inst_13A52B05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floorBarrier" x="864" y="448" name="inst_BF97B8AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -77,7 +77,7 @@ if (hit != noone &amp;&amp; hit != immuneInst) {
     instance_destroy();
 }
 
-if (instance_place(x, y, par_wall) != noone) {
+if (instance_place(x, y, par_wallBlock) != noone) {
     instance_destroy();
 }
 

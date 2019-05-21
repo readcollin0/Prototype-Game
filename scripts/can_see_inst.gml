@@ -19,7 +19,7 @@ if (abs(angle_difference(viewAngle, angleToInst)) > fov / 2) {
     return false;
 }
 
-if (collision_line(x, y, inst.x, inst.y, par_wall, false, true) != noone) {
+if (collision_line(x, y, inst.x, inst.y, par_wallBlock, false, true) != noone) {
     return false;
 }
 
