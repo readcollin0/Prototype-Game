@@ -59,6 +59,8 @@ currentMessage = 0;
 leave = false;
 fadeIn = true;
 alpha = 0;
+waitFrames = 0;
+skip = false;
 </string>
           </argument>
         </arguments>
@@ -88,6 +90,16 @@ alpha = 0;
         room_goto(ROOM_START);
     }
 } else {
+    var enter = keyboard_check_pressed(vk_enter);
+    var space = keyboard_check_pressed(vk_space);
+    if (enter || space) {
+        fadeIn = false;
+        waitFrames = 0;
+        if (keyboard_check_pressed(vk_enter)) {
+            skip = true;
+        }
+    }
+    
     if (fadeIn) {
         alpha += TEXT_FADE_RATE;
         if (alpha &gt;= 1) {
@@ -108,7 +120,7 @@ alpha = 0;
         waitFrames = WAIT_TIME;
         alpha = 0;
         currentMessage++;
-        if (currentMessage == array_height_2d(text)) {
+        if (currentMessage == array_height_2d(text) || skip) {
             leave = true;
             waitFrames = WAIT_TIME;
             fade(FADE_RATE, WAIT_TIME, FADE_RATE);
