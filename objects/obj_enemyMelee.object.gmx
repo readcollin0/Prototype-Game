@@ -43,6 +43,9 @@ actionNumber = 0;
 state = "actions";
 resumeTimer = 0;
 complete = true;
+dir = 1;
+anim_timer = 1;
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -96,17 +99,31 @@ if (state == "attack") {
     
 // Pre-defined action code //
     complete = enemy_perform_action(curAction);
-
+    
+    if (curAction[0] == 3) {
+        nextDir = curAction[1];
+    }
+    
     if (complete) {
         actionNumber++;
-        
         if (actionNumber == array_length_1d(actions)) {
             actionNumber = 0;
         }
     }
 }
 
+dir = deg_to_dir(direction);
 
+switch (dir) {
+    case 1: sprite_anim_tool(6, 7, 30);
+        break;
+    case 2: sprite_anim_tool(4, 5, 30);
+        break;
+    case 3: sprite_anim_tool(0, 1, 30);
+        break;
+    case 4: sprite_anim_tool(2, 3, 30);
+        break;
+}
 </string>
           </argument>
         </arguments>
@@ -136,6 +153,7 @@ if (get_setting("debugMode")) {
     var viewY = view_yview[0];
     
     draw_text(x - viewX, y - viewY + 10, "state: " + state);
+    draw_text(x - viewX, y - viewY + 20, "dir: " + string(dir));
     
     if (state == "attack") {
         draw_circle(x - viewX, y - viewY, CHASING_RANGE, true);

@@ -36,8 +36,12 @@
       <sprites name="key">
         <sprite>sprites\key_gold1</sprite>
       </sprites>
+      <sprites name="door">
+        <sprite>sprites\spr_door</sprite>
+        <sprite>sprites\spr_doorFront</sprite>
+        <sprite>sprites\spr_doorSide</sprite>
+      </sprites>
       <sprite>sprites\spr_wallTest</sprite>
-      <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_platform</sprite>
       <sprite>sprites\spr_explosive</sprite>
     </sprites>
@@ -60,6 +64,7 @@
     <background>background\spr_tileTest</background>
     <background>background\bg_tileset</background>
     <background>background\bg_tilesetV2</background>
+    <background>background\bg_hoops</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -95,6 +100,8 @@
     <script>scripts\scr_instance_place_multi.gml</script>
     <script>scripts\setup_fireball.gml</script>
     <script>scripts\dir_to_deg.gml</script>
+    <script>scripts\deg_to_dir.gml</script>
+    <script>scripts\sprite_anim_tool.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="gui">
@@ -113,7 +120,6 @@
       </objects>
       <objects name="environment">
         <object>objects\obj_wallTest</object>
-        <object>objects\obj_door</object>
         <object>objects\par_wall</object>
         <object>objects\par_wallBlock</object>
         <object>objects\par_floorBlock</object>
@@ -131,6 +137,11 @@
           <object>objects\obj_wallInvisCornerSmall</object>
           <object>objects\obj_wallInvisCornerInv</object>
           <object>objects\obj_floorBarrier</object>
+        </objects>
+        <objects name="door">
+          <object>objects\obj_door</object>
+          <object>objects\obj_doorFront</object>
+          <object>objects\obj_doorSide</object>
         </objects>
       </objects>
       <objects name="pickups">
