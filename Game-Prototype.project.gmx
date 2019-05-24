@@ -53,6 +53,8 @@
       <sprite>sprites\spr_heart</sprite>
       <sprite>sprites\spr_dead</sprite>
       <sprite>sprites\spr_startButton</sprite>
+      <sprite>sprites\spr_cursor</sprite>
+      <sprite>sprites\spr_blackFade</sprite>
     </sprites>
     <sprites name="particle">
       <sprite>sprites\spr_fireball</sprite>
@@ -65,6 +67,7 @@
     <background>background\bg_tileset</background>
     <background>background\bg_tilesetV2</background>
     <background>background\bg_hoops</background>
+    <background>background\bg_titleScreen</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -102,11 +105,13 @@
     <script>scripts\dir_to_deg.gml</script>
     <script>scripts\deg_to_dir.gml</script>
     <script>scripts\sprite_anim_tool.gml</script>
+    <script>scripts\fade.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="gui">
       <object>objects\obj_dead</object>
       <object>objects\obj_startButton</object>
+      <object>objects\obj_cursor</object>
     </objects>
     <objects name="game">
       <object>objects\obj_player</object>
