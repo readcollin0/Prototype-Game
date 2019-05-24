@@ -29,10 +29,16 @@
 wait = false;
 
 // Settings
-FADE_SPEED = 1 / (.75 * room_speed);
-WAIT_TIME = 1 * room_speed;
-
-ACTION_DELAY = 1.5 * room_speed;
+if (get_setting("debugMode")) {
+    FADE_SPEED = 1;
+    WAIT_TIME = 0;
+    ACTION_DELAY = 0;
+} else {
+    FADE_SPEED = 1 / (.75 * room_speed);
+    WAIT_TIME = 1 * room_speed;
+    
+    ACTION_DELAY = 1.5 * room_speed;
+}
 
 // Initialization
 waitFrames = 0;
