@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,21 +25,48 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>parse_program_args();
+            <string>// Settings
+TEXT_FADE_RATE = 1 / (1 * room_speed);
+TEXT_TIME_SEP = .5 * room_speed;
 
-// Globals Initialization
-global.nextTransitionFile = "intro.txt";
-global.nextTransitionRoom = rm_level1;
+FADE_RATE = 1 / (1 * room_speed);
+WAIT_TIME = 1 * room_speed;
+ACTION_DELAY = 1.5 * room_speed;
+
+TEXT_X = 256;
+TEXT_Y = 256;
+TEXT_SIZE_X = 512;
+
+ROOM_START = global.nextTransitionRoom;
+
+// File Loading Initialization
+var file = file_text_open_read(global.nextTransitionFile);
+text = noone;
+
+var n = 0;
+while (!file_text_eof(file)) {
+    text[n, 0] = string_wordwrap_width(file_text_readln(file), TEXT_SIZE_X, '#', false);
+    text[n, 1] = file_text_read_real(file);
+    file_text_readln(file); // One to finish the "real" read
+    file_text_readln(file); // And one to eat the blank line
+    n++;
+}
+
+file_text_close(file);
 
 // Initialization
-global.doFade = false;
-doFade = false;
+currentMessage = 0;
+leave = false;
+fadeIn = true;
+alpha = 0;
+waitFrames = 0;
+skip = false;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="75">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,62 +83,51 @@ doFade = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.doFade) {
-    if (doFade) {
-        if (fadeOut) {
-            alpha += FADE_OUT_RATE;
-            if (alpha &gt; 1) {
-                alpha = 1;
-                fadeOut = false;
-            }
-        } else if (waitFrames &gt; 0) {
-            waitFrames--;
-        } else {
-            alpha -= FADE_IN_RATE;
-            if (alpha &lt; 0) {
-                alpha = 0;
-                doFade = false;
-                global.doFade = false;
-            }
-        }
-        draw_sprite_ext(spr_blackFade, 0, 0, 0, 1, 1, 0, c_white, alpha);
+            <string>if (leave) {
+    if (waitFrames &gt; 0) {
+        waitFrames--;
     } else {
-        doFade = true;
-        fadeOut = true;
-        
-        alpha = 0;
-        FADE_OUT_RATE = global.fadeOutRate;
-        FADE_IN_RATE = global.fadeInRate;
-        waitFrames = global.waitFrames;
-        
-        global.fadeOutRate = noone;
-        global.fadeInRade = noone;
-        global.waitFrames = noone;
+        room_goto(ROOM_START);
     }
+} else {
+    var enter = keyboard_check_pressed(vk_enter);
+    var space = keyboard_check_pressed(vk_space);
+    if (enter || space) {
+        fadeIn = false;
+        waitFrames = 0;
+        if (keyboard_check_pressed(vk_enter)) {
+            skip = true;
+        }
+    }
+    
+    if (fadeIn) {
+        alpha += TEXT_FADE_RATE;
+        if (alpha &gt;= 1) {
+            alpha = 1;
+            fadeIn = false;
+            waitFrames = text[currentMessage,1] * room_speed;
+        }   
+    } else if (waitFrames &gt; 0) {
+        waitFrames--;
+    } else if (alpha &gt; 0) {
+        alpha -= TEXT_FADE_RATE;
+        if (alpha &lt;= 0) {
+            alpha = 0;
+            waitFrames = TEXT_TIME_SEP;
+        }
+    } else {
+        fadeIn = true;
+        waitFrames = WAIT_TIME;
+        alpha = 0;
+        currentMessage++;
+        if (currentMessage == array_height_2d(text) || skip) {
+            leave = true;
+            waitFrames = WAIT_TIME;
+            fade(FADE_RATE, WAIT_TIME, FADE_RATE);
+        }
+    }
+    if (!leave) draw_text_colour(TEXT_X, TEXT_Y, text[currentMessage,0], c_white, c_white, c_white, c_white, alpha);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room_restart();
 </string>
           </argument>
         </arguments>
