@@ -64,6 +64,7 @@
     <background>background\spr_tileTest</background>
     <background>background\bg_tileset</background>
     <background>background\bg_tilesetV2</background>
+    <background>background\bg_hoops</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
