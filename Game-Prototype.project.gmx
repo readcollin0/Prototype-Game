@@ -60,6 +60,7 @@
       </sprites>
       <sprites name="key">
         <sprite>sprites\key_gold1</sprite>
+        <sprite>sprites\key_red1</sprite>
       </sprites>
       <sprites name="door">
         <sprite>sprites\spr_door</sprite>
@@ -161,6 +162,7 @@
         <objects name="keys">
           <object>objects\obj_key</object>
           <object>objects\par_key</object>
+          <object>objects\obj_keyRed</object>
         </objects>
         <objects name="wallInvis">
           <object>objects\obj_wallInvis</object>

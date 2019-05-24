@@ -28,6 +28,8 @@
             <string>keyId = "EMPTY";
 
 depth = -100 * y;
+
+type = 1;
 </string>
           </argument>
         </arguments>
@@ -50,13 +52,33 @@ depth = -100 * y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (ds_map_exists(global.keys, keyId)) {
-    if (global.keys[? keyId] == true) {
-        image_alpha -= (1 / 120);
-        if (image_alpha &lt;= 0) {
-            instance_deactivate_object(self);
+            <string>switch (type) {
+    case 1: // Single-key door.
+        if (ds_map_exists(global.keys, keyId)) {
+            if (global.keys[? keyId] == true) {
+                image_alpha -= (1 / 120);
+                if (image_alpha &lt;= 0) {
+                    instance_deactivate_object(self);
+                }
+            }
         }
-    }
+        break;
+        
+    case 2: // Multi-key door.
+        open = true;
+        for (var i = 0; i &lt; instance_number(par_key); i++) {
+            var key = instance_find(par_key, i);
+            if (key.keyId = keyId) {
+                open = false;
+                break;
+            }
+        }
+        if (open) {
+            image_alpha -= (1 / 120);
+            if (image_alpha &lt;= 0) {
+                instance_deactivate_object(self);
+            }
+        }
 }
 </string>
           </argument>
