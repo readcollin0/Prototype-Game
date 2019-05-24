@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_floorBarrier</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>-100000000</depth>
   <persistent>0</persistent>
   <parentName>par_floorBlock</parentName>
@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!get_setting("debugMode")) {
-    image_alpha = 0;
+            <string>if (get_setting("debugMode")) {
+    visible = true;
 }
 </string>
           </argument>

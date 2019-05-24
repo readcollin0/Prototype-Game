@@ -25,24 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Globals //
+            <string>// Globals
 global.keys = ds_map_create();
 global.DEAD = false;
 texture_set_interpolation(false);
 
-// Player constants //
+// Settings
 INVINCIBILITY_FRAMES = 2 * room_speed;
 INV_GONE_FRAMES = (4/30) * room_speed;
 INV_HERE_FRAMES = (11/30) * room_speed;
 PLAYER_SPEED = 200 / room_speed;
 MAX_HEALTH = 5;
+SPEECH_BUBBLE_PADDING = 5;
+SPEECH_BUBBLE_X_SIZE = 192;
+SPEECH_BUBBLE_Y_OFFSET = -90;
+
+// Defaults
+dir = 2; // This is the default direction, right.
 image_speed = 1 / 15; // Animation speed, FPS
 
-// Default settings //
-dir = 2; // This is the default direction, right.
+// Initializations
+attacking = false;
 hp = MAX_HEALTH;
 invincibility = 0;
-attacking = false;
+speech = noone;
+speechTime = 0;
 </string>
           </argument>
         </arguments>
@@ -252,6 +259,28 @@ depth = -(100 * y + 50)
           <argument>
             <kind>1</kind>
             <string>draw_health();
+
+if (speech != noone) {
+    if (speechTime &gt; 0) {
+        var viewX = view_xview[0];
+        var viewY = view_yview[0];
+        draw_set_alpha(.5);
+        var x1 = x - viewX - (speechWidth/2);
+        var y1 = y - viewY + SPEECH_BUBBLE_Y_OFFSET - speechHeight;
+        var x2 = x - viewX + (speechWidth/2);
+        var y2 = y - viewY + SPEECH_BUBBLE_Y_OFFSET;
+        draw_rectangle_colour(x1 - SPEECH_BUBBLE_PADDING, y1 - SPEECH_BUBBLE_PADDING,
+                                x2 + SPEECH_BUBBLE_PADDING, y2 + SPEECH_BUBBLE_PADDING,
+                                c_black, c_black, c_black, c_black, false);
+        draw_set_alpha(1);
+        draw_text(x1, y1, speech);
+        
+        speechTime--;
+    } else {
+        speech = noone;
+        speechTime = -1;
+    }
+}
 </string>
           </argument>
         </arguments>

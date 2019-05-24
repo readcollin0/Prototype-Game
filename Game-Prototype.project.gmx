@@ -69,6 +69,7 @@
       <sprite>sprites\spr_wallTest</sprite>
       <sprite>sprites\spr_platform</sprite>
       <sprite>sprites\spr_explosive</sprite>
+      <sprite>sprites\spr_speechTrigger</sprite>
     </sprites>
     <sprites name="enemy">
       <sprite>sprites\spr_enemy</sprite>
@@ -175,6 +176,7 @@
           <object>objects\obj_doorFront</object>
           <object>objects\obj_doorSide</object>
         </objects>
+        <object>objects\obj_speechTrigger</object>
       </objects>
       <objects name="pickups">
         <object>objects\obj_potionHP</object>
