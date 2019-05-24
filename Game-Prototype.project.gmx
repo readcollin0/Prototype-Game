@@ -65,6 +65,7 @@
         <sprite>sprites\spr_door</sprite>
         <sprite>sprites\spr_doorFront</sprite>
         <sprite>sprites\spr_doorSide</sprite>
+        <sprite>sprites\spr_doorSide2</sprite>
       </sprites>
       <sprite>sprites\spr_wallTest</sprite>
       <sprite>sprites\spr_platform</sprite>
@@ -174,7 +175,8 @@
         <objects name="door">
           <object>objects\obj_door</object>
           <object>objects\obj_doorFront</object>
-          <object>objects\obj_doorSide</object>
+          <object>objects\obj_doorSideLower</object>
+          <object>objects\obj_doorSideUpper</object>
         </objects>
         <object>objects\obj_speechTrigger</object>
       </objects>
