@@ -119,6 +119,7 @@
     <background>background\bg_tilesetV2</background>
     <background>background\bg_hoops</background>
     <background>background\bg_titleScreen</background>
+    <background>background\bg_fences</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
