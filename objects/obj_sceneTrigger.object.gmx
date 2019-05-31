@@ -73,18 +73,20 @@ if (get_setting("debugMode")) {
     if (waitTime &gt; 0) {
         waitTime--;
     } else {
-        global.nextTransitionRoom = transitionRoom;
-        global.nextTransitionFile = transitionFile;
-        global.transitionPlayer = transitionPlayer;
-        global.nextRoomX = nextRoomX;
-        global.nextRoomY = nextRoomY;
-        global.nextPlayerDir = playerDir;
-        room_goto(nextRoom);
-        if (nextRoom != rm_intro) {
+        if (nextRoom == rm_intro) {
+            global.nextTransitionRoom = transitionRoom;
+            global.nextTransitionFile = transitionFile;
+            global.transitionPlayer = transitionPlayer;
+            global.nextRoomX = nextRoomX;
+            global.nextRoomY = nextRoomY;
+            global.nextPlayerDir = playerDir;
+        } else {
             global.player.x = nextRoomX;
             global.player.y = nextRoomY;
             global.player.dir = playerDir;
         }
+        doFade = false;
+        room_goto(nextRoom);
     }
 } else {
     var collide = place_meeting(x, y, obj_player);
