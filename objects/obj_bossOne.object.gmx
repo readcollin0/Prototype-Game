@@ -36,10 +36,60 @@ FIRE_TIME = 2 * room_speed;
 FIREBALL_SIZE = 3;
 damage = 2.5;
 
+KEY_DROP_DELAY = 3 * room_speed;
+
 // HP Bar Settings
 HP_BAR_X_SIZE = 96;
 HP_BAR_Y_SIZE = 16;
 DRAW_HP_FULL = true;
+
+// Initializations
+keyDropTimer = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (dead) {
+    image_alpha -= FADE_SPEED;
+    if (image_alpha &lt;= 0) {
+        if (keyDropTimer == -1) {
+            keyDropTimer = KEY_DROP_DELAY;
+        } else if (keyDropTimer &lt;= 0) {
+            var key = instance_create(256, 368, obj_key);
+            key.keyId = "BasementDoor";
+            instance_destroy();
+        } else {
+            keyDropTimer--;
+        }
+        
+    }
+} else if (hp &lt;= 0) {
+    hp = 0;
+    audio_play_sound(sfx_enemyDie, 10, false);
+    speed = random_range(20, 40) / room_speed;
+    direction = 90 + random_range(-60, 60);
+    dead = true;
+}
+
+depth = -(y * 100 + 45);
 </string>
           </argument>
         </arguments>

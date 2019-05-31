@@ -43,6 +43,31 @@ init = true;
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="75">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (get_setting("debugMode")) {
+    draw_text(x - view_xview[0], y - view_yview[0], "hp: " + string(hp));
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -64,17 +89,12 @@ init = true;
 
 if (init) {
     hp = MAX_HEALTH;
-    
     init = false;
 }
 
-if (get_setting("debugMode")) {
-    draw_text(x - view_xview[0], y - view_yview[0], "hp: " + string(hp));
-}
-
-if (DRAW_HP_BAR) {
+if (DRAW_HP_BAR &amp;&amp; image_alpha &gt; 0) {
     draw_health_bar(x + HP_BAR_X_OFFSET, y + HP_BAR_Y_OFFSET,
-                    hp, MAX_HEALTH, HP_BAR_X_SIZE, HP_BAR_Y_SIZE, DRAW_HP_FULL);
+                    hp, MAX_HEALTH, HP_BAR_X_SIZE, HP_BAR_Y_SIZE, .5 * image_alpha, DRAW_HP_FULL);
 }
 </string>
           </argument>

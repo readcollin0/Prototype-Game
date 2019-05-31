@@ -196,7 +196,12 @@ if (!grounded) {
 
 var key = instance_place(x, y, par_key);
 if (key != noone) {
-    ds_map_add(global.keys, key.keyId, true);
+    if (ds_map_exists(global.keys, key.keyId)) {
+        var keysGotten = global.keys[? key.keyId] + 1;
+    } else {
+        var keysGotten = 1;
+    }
+    ds_map_replace(global.keys, key.keyId, keysGotten);
     instance_destroy(key);
 }
 

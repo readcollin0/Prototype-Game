@@ -376,7 +376,7 @@
     <instance objName="obj_wallTest" x="704" y="992" name="inst_96A63781" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallTest" x="672" y="992" name="inst_1B4C320C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemyBasic" x="96" y="800" name="inst_7B8D8C25" locked="0" code="actions = array(array(1, 96, 800, 100),&#xA;                array(2, 1),&#xA;                array(1, 800, 800, 100),&#xA;                array(2, 1),&#xA;                array(1, 800, 896, 100),&#xA;                array(2, 1),&#xA;                array(1, 96, 896, 100),&#xA;                array(2, 1));&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="608" y="704" name="inst_D63C2C3C" locked="0" code="keyId = &quot;TestKey&quot;;&#xA;type = 2;&#xA;" scaleX="1" scaleY="3" colour="4294967295" rotation="270"/>
+    <instance objName="obj_door" x="608" y="704" name="inst_D63C2C3C" locked="0" code="keyId = &quot;TestKey&quot;;&#xA;keysNeeded = 3;&#xA;" scaleX="1" scaleY="3" colour="4294967295" rotation="270"/>
     <instance objName="obj_key" x="256" y="192" name="inst_D5B81F15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_key" x="128" y="832" name="inst_47EE7DA2" locked="0" code="keyId = &quot;Door2!!!!&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="896" y="768" name="inst_1335CEC9" locked="0" code="keyId = &quot;Door2!!!!&quot;;" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>

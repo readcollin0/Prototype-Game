@@ -1962,8 +1962,8 @@
     <instance objName="obj_wallInvis" x="5984" y="2080" name="inst_DE55EBDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallInvis" x="5952" y="2080" name="inst_24040237" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallInvis" x="5952" y="2112" name="inst_BF0FD514" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_doorFront" x="6208" y="2080" name="inst_5DBEDA22" locked="0" code="keyId = &quot;final&quot;;&#xA;type = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_doorFront" x="6208" y="2080" name="inst_01C29627" locked="0" code="keyId = &quot;final&quot;;&#xA;type = 2;" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_doorFront" x="6208" y="2080" name="inst_5DBEDA22" locked="0" code="keyId = &quot;final&quot;;&#xA;keysNeeded = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_doorFront" x="6208" y="2080" name="inst_01C29627" locked="0" code="keyId = &quot;final&quot;;&#xA;keysNeeded = 3;&#xA;" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_sceneTrigger" x="6176" y="2112" name="inst_455E465D" locked="0" code="nextRoom = rm_basement;&#xA;transitionPlayer = true;&#xA;nextRoomX = 864;&#xA;nextRoomY = 672;&#xA;playerDir = 1;&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

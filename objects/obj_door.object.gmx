@@ -26,10 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>keyId = "EMPTY";
+keysNeeded = 1;
 
 depth = -100 * y;
 
-type = 1;
+open = false;
 </string>
           </argument>
         </arguments>
@@ -52,40 +53,22 @@ type = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch (type) {
-    case 1: // Single-key door.
-        if (ds_map_exists(global.keys, keyId)) {
-            if (global.keys[? keyId] == true) {
-                image_alpha -= (1 / 120);
-                if (image_alpha &lt;= 0) {
-                    instance_deactivate_object(self);
-                }
-            }
-        }
-        break;
-        
-    case 2: // Multi-key door.
+            <string>if (open) {
+    image_alpha -= (1 / 120);
+    if (image_alpha &lt;= 0) {
+        instance_deactivate_object(self);
+    }
+} else if (ds_map_exists(global.keys, keyId)) {
+    if (global.keys[? keyId] &gt;= keysNeeded) {
         open = true;
-        for (var i = 0; i &lt; instance_number(par_key); i++) {
-            var key = instance_find(par_key, i);
-            if (key.keyId = keyId) {
-                open = false;
-                break;
-            }
-        }
-        if (open) {
-            image_alpha -= (1 / 120);
-            if (image_alpha &lt;= 0) {
-                instance_deactivate_object(self);
-            }
-        }
+    }
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="74">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -102,8 +85,18 @@ type = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (get_setting("debugMode")) {
-    draw_text(x - view_xview[0], y - view_yview[0], "keyId: " + string(keyId));
+            <string>draw_self();
+
+if (get_setting("debugMode")) {
+    draw_text(x, y, "keyId: " + string(keyId));
+    draw_text(x, y + 10, "keysNeeded: " + string(keysNeeded));
+    var keys;
+    if (ds_map_exists(global.keys, keyId)) {
+        keys = global.keys[? keyId];
+    } else {
+        keys = 0;
+    }
+    draw_text(x, y + 20, "keysGotten: " + string(keys));
 }
 </string>
           </argument>
