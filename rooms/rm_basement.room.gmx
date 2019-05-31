@@ -150,8 +150,7 @@
     <instance objName="obj_wallInvis" x="928" y="64" name="inst_C2A39DB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallInvis" x="960" y="64" name="inst_4665CBD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallInvis" x="992" y="352" name="inst_CE1FABAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_sceneTrigger" x="832" y="704" name="inst_C1F9CFB2" locked="0" code="nextRoom = rm_level1;&#xA;transitionPlayer = true;&#xA;nextRoomX = 6208;&#xA;nextRoomY = 1984;&#xA;playerDir = 1;&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wallInvis" x="896" y="352" name="inst_0078C59D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_sceneTrigger" x="832" y="704" name="inst_C1F9CFB2" locked="0" code="nextRoom = rm_level1;&#xA;transitionPlayer = true;&#xA;nextRoomX = 6208;&#xA;nextRoomY = 2016;&#xA;playerDir = 1;&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_bossOne" x="256" y="352" name="inst_58B45130" locked="0" code="dir = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallInvis" x="32" y="288" name="inst_60D2487C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallInvis" x="32" y="416" name="inst_88672D7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

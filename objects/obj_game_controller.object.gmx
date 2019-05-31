@@ -31,10 +31,17 @@
 global.nextTransitionFile = "intro.txt";
 global.nextTransitionRoom = rm_level1;
 global.transitionPlayer = false;
+global.player = noone;
 
 // Initialization
 global.doFade = false;
 doFade = false;
+
+// Create Player
+var startX = get_setting("startingXPos");
+var startY = get_setting("startingYPos");
+instance_create(startX, startY, obj_player);
+global.player.visible = false;
 </string>
           </argument>
         </arguments>

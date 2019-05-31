@@ -68,7 +68,9 @@ waitFrames = 0;
     waitFrames--;
     if (waitFrames &lt;= 0) {
         switch (currentOption) {
-            case "start": room_goto(startingRoom);
+            case "start": 
+                global.player.visible = true;
+                room_goto(startingRoom);
                 break;
             case "quit": game_end();
                 break;

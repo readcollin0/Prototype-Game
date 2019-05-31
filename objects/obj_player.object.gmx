@@ -33,16 +33,16 @@ global.DEAD = false;
 texture_set_interpolation(false);
 
 // Settings
-INVINCIBILITY_FRAMES = 2 * room_speed;
-INV_GONE_FRAMES = (4/30) * room_speed;
-INV_HERE_FRAMES = (11/30) * room_speed;
-PLAYER_SPEED = 200 / room_speed;
+INVINCIBILITY_FRAMES = 2 * cfg_roomSpeed;
+INV_GONE_FRAMES = (4/30) * cfg_roomSpeed;
+INV_HERE_FRAMES = (11/30) * cfg_roomSpeed;
+PLAYER_SPEED = 200 / cfg_roomSpeed;
 MAX_HEALTH = 5;
 SPEECH_BUBBLE_PADDING = 5;
 SPEECH_BUBBLE_X_SIZE = 192;
 SPEECH_BUBBLE_Y_OFFSET = -90;
 
-ANIM_FRAMES = (1/5) * room_speed;
+ANIM_FRAMES = (1/5) * cfg_roomSpeed;
 
 DRAW_HP_BAR = false;
 
@@ -138,6 +138,9 @@ if (hp &lt;= 0) {
     exit;
 }
 
+if (visible = false) {
+    exit;
+}
 
 var key_left = keyboard_check_direct(ord('A')) || keyboard_check_direct(vk_left);
 var key_right = keyboard_check_direct(ord('D')) || keyboard_check_direct(vk_right);
@@ -273,7 +276,7 @@ depth = -(100 * y + 50)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_health();
+            <string>if (visible) draw_health();
 
 if (speech != noone) {
     if (speechTime &gt; 0) {

@@ -157,6 +157,7 @@
       <script>scripts\create_param_ds_map.gml</script>
       <script>scripts\parse_program_arg.gml</script>
       <script>scripts\get_setting.gml</script>
+      <script>scripts\valid_number.gml</script>
     </scripts>
     <script>scripts\set_sprite_tool.gml</script>
     <script>scripts\scr_instance_place_multi.gml</script>
@@ -230,11 +231,14 @@
     <room>rooms\rm_quit</room>
     <room>rooms\room1</room>
   </rooms>
-  <constants number="4">
+  <constants number="7">
     <constant name="def_debug">false</constant>
     <constant name="def_useTestLevel">false</constant>
     <constant name="cfg_startingRoom">rm_intro</constant>
+    <constant name="cfg_startingX">192</constant>
+    <constant name="cfg_startingY">1888</constant>
     <constant name="cfg_useSound">true</constant>
+    <constant name="cfg_roomSpeed">60</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

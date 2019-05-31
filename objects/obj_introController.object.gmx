@@ -61,6 +61,7 @@ fadeIn = true;
 alpha = 0;
 waitFrames = 0;
 skip = false;
+global.player.visible = false;
 </string>
           </argument>
         </arguments>
@@ -88,6 +89,7 @@ skip = false;
         waitFrames--;
     } else {
         room_goto(ROOM_START);
+        global.player.visible = true;
         if (global.transitionPlayer) {
             global.player.x = global.nextRoomX;
             global.player.y = global.nextRoomY;
