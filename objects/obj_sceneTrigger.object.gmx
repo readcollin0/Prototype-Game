@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_speechTrigger</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -35,9 +35,18 @@ ACTION_DELAY = 1.9 * room_speed
 nextRoom = rm_quit;
 transitionRoom = rm_quit;
 transitionFile = "intro.txt";
+transitionPlayer = false;
+nextRoomX = 0;
+nextRoomY = 0;
+playerDir = 1;
 
 // Initialization
 doFade = false;
+
+if (get_setting("debugMode")) {
+    visible = true;
+}
+
 </string>
           </argument>
         </arguments>
@@ -66,11 +75,20 @@ doFade = false;
     } else {
         global.nextTransitionRoom = transitionRoom;
         global.nextTransitionFile = transitionFile;
+        global.transitionPlayer = transitionPlayer;
+        global.nextRoomX = nextRoomX;
+        global.nextRoomY = nextRoomY;
+        global.nextPlayerDir = playerDir;
         room_goto(nextRoom);
+        if (nextRoom != rm_intro) {
+            global.player.x = nextRoomX;
+            global.player.y = nextRoomY;
+            global.player.dir = playerDir;
+        }
     }
 } else {
-    var player = instance_place(x, y, obj_player);
-    if (player != noone) {
+    var collide = place_meeting(x, y, obj_player);
+    if (collide) {
         doFade = true;
         fade(FADE_SPEED, WAIT_TIME, FADE_SPEED);
         waitTime = ACTION_DELAY;

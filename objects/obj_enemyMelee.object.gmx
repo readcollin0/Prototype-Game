@@ -29,6 +29,7 @@
 
 // Settings
 damage = 1;
+MAX_HEALTH = 2;
 MAX_RANGE = 256;
 ENEMY_FOV = 90;
 CHASING_SPEED = 100 / room_speed;
@@ -37,6 +38,11 @@ RESUME_TIME = 3 * room_speed;
 
 // Defaults
 actions = array(array(2, 1));
+
+// HP Bar Settings
+HP_BAR_X_OFFSET = 0;
+HP_BAR_Y_OFFSET = 20;
+DRAW_HP_FULL = true;
 
 // Initialization
 actionNumber = 0;
@@ -73,6 +79,8 @@ image_speed = 0;
     image_speed = 0;
     exit;
 }
+
+if (dead) exit;
 
 var curAction = actions[actionNumber];
 var player = instance_nearest(x, y, obj_player);

@@ -56,6 +56,12 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\sfx_explosion</sound>
+    <sound>sound\sfx_swordSwing</sound>
+    <sound>sound\sfx_fireballShoot</sound>
+    <sound>sound\sfx_menuChange</sound>
+    <sound>sound\sfx_menuSelect</sound>
+    <sound>sound\sfx_enemyDie</sound>
+    <sound>sound\sfx_step</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="player">
@@ -144,6 +150,7 @@
     <scripts name="draw">
       <script>scripts\draw_health.gml</script>
       <script>scripts\draw_arc.gml</script>
+      <script>scripts\draw_health_bar.gml</script>
     </scripts>
     <scripts name="parse_args">
       <script>scripts\parse_program_args.gml</script>
@@ -176,6 +183,7 @@
         <object>objects\par_enemy</object>
         <object>objects\obj_enemyBasic</object>
         <object>objects\obj_enemyMelee</object>
+        <object>objects\obj_bossOne</object>
       </objects>
       <objects name="environment">
         <object>objects\obj_wallTest</object>
@@ -218,8 +226,9 @@
     <room>rooms\rm_title</room>
     <room>rooms\rm_intro</room>
     <room>rooms\rm_level1</room>
-    <room>rooms\room1</room>
+    <room>rooms\rm_basement</room>
     <room>rooms\rm_quit</room>
+    <room>rooms\room1</room>
   </rooms>
   <constants number="4">
     <constant name="def_debug">false</constant>

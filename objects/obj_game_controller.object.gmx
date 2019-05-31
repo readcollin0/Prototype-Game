@@ -30,6 +30,7 @@
 // Globals Initialization
 global.nextTransitionFile = "intro.txt";
 global.nextTransitionRoom = rm_level1;
+global.transitionPlayer = false;
 
 // Initialization
 global.doFade = false;

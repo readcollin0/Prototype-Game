@@ -25,13 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp = 1;
+            <string>MAX_HEALTH = 1;
+hp = 1;
+
+// Per Object Settings
+DRAW_HP_BAR = true;
+HP_BAR_X_OFFSET = 0;
+HP_BAR_Y_OFFSET = 0;
+HP_BAR_X_SIZE = 48;
+HP_BAR_Y_SIZE = 5;
+DRAW_HP_FULL = false;
+
+// Initialization
+init = true;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="74">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,8 +60,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (get_setting("debugMode")) {
+            <string>draw_self();
+
+if (init) {
+    hp = MAX_HEALTH;
+    
+    init = false;
+}
+
+if (get_setting("debugMode")) {
     draw_text(x - view_xview[0], y - view_yview[0], "hp: " + string(hp));
+}
+
+if (DRAW_HP_BAR) {
+    draw_health_bar(x + HP_BAR_X_OFFSET, y + HP_BAR_Y_OFFSET,
+                    hp, MAX_HEALTH, HP_BAR_X_SIZE, HP_BAR_Y_SIZE, DRAW_HP_FULL);
 }
 </string>
           </argument>

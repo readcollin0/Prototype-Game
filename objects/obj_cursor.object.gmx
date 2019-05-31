@@ -75,10 +75,12 @@ waitFrames = 0;
         }
     }
 } else if(keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)) {
+    audio_play_sound(sfx_menuSelect, 10, false);
     fade(FADE_SPEED, WAIT_TIME, FADE_SPEED);
     waitFrames = ACTION_DELAY;
     wait = true;
 } else if (keyboard_check_pressed(vk_left) || keyboard_check_pressed(vk_right)) {
+    audio_play_sound(sfx_menuChange, 10, false);
     if (currentOption == "start") {
         x = 576;
         currentOption = "quit";

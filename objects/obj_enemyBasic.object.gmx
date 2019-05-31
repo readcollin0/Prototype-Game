@@ -29,10 +29,17 @@
 
 // Settings
 image_speed = 1 / (2/3 * room_speed);
+MAX_HEALTH = 2;
 damage = 1;
 MAX_RANGE = 320;
 FIRE_TIME = 2 * room_speed; // 3 Seconds between shots
+FIREBALL_SIZE = 1;
 RESUME_TIME = 1.5 * room_speed; // After loosing lock, wait 1.5 seconds before returning
+
+// HP Bar Settings
+HP_BAR_X_OFFSET = 0;
+HP_BAR_Y_OFFSET = 20;
+DRAW_HP_FULL = true;
 
 // Defaults, replaced by creation code
 actions = array(array(2, 1));
@@ -71,6 +78,8 @@ complete = true;
     exit;
 }
 
+if (dead) exit;
+
 var curAction = actions[actionNumber];
 var player = instance_nearest(x, y, obj_player);
 var canSeePlayer = can_see_inst(player, direction, MAX_RANGE, 360);
@@ -90,8 +99,12 @@ if (state == "attack") {
             fb.image_angle = dir;
             fb.immuneInst = self;
             fb.damage = damage;
+            fb.image_xscale = FIREBALL_SIZE;
+            fb.image_yscale = FIREBALL_SIZE;
             
             fireTimer = FIRE_TIME;
+            
+            audio_play_sound(sfx_fireballShoot, 10, false);
         } else {
             fireTimer -= 1;
         }

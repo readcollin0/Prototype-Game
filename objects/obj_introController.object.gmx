@@ -88,6 +88,11 @@ skip = false;
         waitFrames--;
     } else {
         room_goto(ROOM_START);
+        if (global.transitionPlayer) {
+            global.player.x = global.nextRoomX;
+            global.player.y = global.nextRoomY;
+            global.player = global.nextPlayerDir;
+        }
     }
 } else {
     var enter = keyboard_check_pressed(vk_enter);

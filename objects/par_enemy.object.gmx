@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>event_inherited();
 
+FADE_SPEED = 1 / (1 * room_speed);
+
+dead = false;
 complete = true;
 </string>
           </argument>
@@ -50,8 +53,17 @@ complete = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hp &lt;= 0) {
-    instance_destroy();
+            <string>if (dead) {
+    image_alpha -= FADE_SPEED;
+    if (image_alpha &lt;= 0) {
+        instance_destroy();
+    }
+} else if (hp &lt;= 0) {
+    hp = 0;
+    audio_play_sound(sfx_enemyDie, 10, false);
+    speed = random_range(20, 40) / room_speed;
+    direction = 90 + random_range(-60, 60);
+    dead = true;
 }
 
 depth = -(y * 100 + 45);
