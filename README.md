@@ -28,3 +28,5 @@ The following command-line options are available for usage with the `.zip` build
 	* Allows access to the test level; used for mechanics testing and demonstration.
 * `--level <level_id>` or `-l <level_id>`
 	* Changes what level the game begins with.
+* `--pos <x> <y>` or `-p <x> <y>` (as of v1.1.0-alpha)
+	* Changes where the player starts in the level.
